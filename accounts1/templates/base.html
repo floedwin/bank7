@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <title> Home </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+</head>
+<body>
+<header>
+<nav class="navbar navbar-light bg-faded" style="background-color:#000000" >
+    <!--Logo -->
+    <div class="navbar-header">
+        <a class="navbar-brand"  style="color:white " href="/accounts1">RICHES BANK</a>
+    </div>
+  <button class="navbar-toggler hidden-lg-up" style="color:blue"  type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+
+      <ul class="nav navbar-nav  navbar-right">
+      <li class="nav-item active">
+        <a style="color:blue;" class="nav-link" href="/accounts1">HOME<span class="sr-only">(current)</span></a> </li>
+          <li class="nav-item"><a style="color:blue;" href="{%url 'accounts1:about_us'%}" class="nav-link" >ABOUT</a></li>
+           <li class="nav-item"><a style="color:blue;" href="{%url 'accounts1:contact'%}" class="nav-link" >CONTACT</a></li>
+         <li class="nav-item"> <a style="color:blue;" href="/accounts1/profile" class="nav-link" >PROFILE</a></li>
+
+
+      <li class="nav-item active">
+        <li class="nav-item"><a style="color:blue;" href="/accounts1/login" class="nav-link"> LOGIN </a></li>
+          <li class="nav-item"><a style="color:blue;" href="/accounts1/register/"class="nav-link"> REGISTER</a></li>
+           <li class="nav-item"><a style="color:blue;" href="/accounts1/logout" class="nav-link" >LOGOUT</a></li>
+        </ul>
+
+    </div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    CREDIT PRODUCTS <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{%url 'accounts1:business_loans_and_leases'%}">Business Loans and Leases</a></li>
+    <li><a href="{%url 'accounts1:consumer_loans'%}">Consumer Loans</a></li>
+    <li><a href="{%url 'accounts1:special_loan_schemes'%}">Special Loan Schemes</a></li>
+
+  </ul>
+</div>
+    <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    DEPOSIT PRODUCTS <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{%url 'accounts1:current_account'%}">Current Account</a></li>
+    <li><a href="{%url 'accounts1:savings_account'%}">Savings Account</a></li>
+      <li><a href="{%url 'accounts1:cente_fixed_deposit_account'%}">Cente Fixed Deposit Account</a></li>
+
+  </ul>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    CUSTOMER INFO <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="{%url 'accounts1:RegisterCustomer'%}" class="nav-link">RegisterCustomer</a></li>
+            <li><a  href="{%url 'accounts1:RegisterCustomerTranscations'%}" class="nav-link">RegisterCustomerTranscations</a></li>
+            <li><a href="{%url 'accounts1:CustomerBankAccount'%}" class="nav-link">CustomerBankAccount</a> </li>
+
+
+  </ul>
+</div>
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    EBANKING <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{%url 'accounts1:ATM_services'%}">ATM services</a></li>
+    <li><a href="{%url 'accounts1:ATM_cardless_withdraw'%}">ATM Cardless Withdraw Service with MTN Mobile Money</a></li>
+      <li><a href="{%url 'accounts1:Ewater_payments'%}">Ewater Payments</a></li>
+       <li><a href="{%url 'accounts1:cente_point'%}">CentePoint (ATM Services)</a></li>
+  </ul>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    MONEY TRANSFER <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{%url 'accounts1:airtel_money'%}">Airtel Money</a></li>
+    <li><a href="{%url 'accounts1:MTN_mobile_money_transfer'%}">MTN Mobile Money Transfer</a></li>
+    <li><a href="{%url 'accounts1:western_union_money_transfer'%}">Western Union Money Transfer</a></li>
+      <li><a href="{%url 'accounts1:platinum_banking'%}">Platinum Banking </a></li>
+    <li><a href="{%url 'accounts1:school_fees_payment_services'%}">School Fees Payment Services</a></li>
+    <li><a href="{%url 'accounts1:standing_orders'%}">Standing Orders</a></li>
+
+  </ul>
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<main>
+<div class="row container-fluid">
+{% block content %}
+{% endblock %}
+</div>
+</main>
+
+<footer>
+
+<div class="row container-fluid"  id="footer">
+<h2> Riches Bank </h2>
+<p>&copy 2018 Riches Bank. All rights reserved.</p>
+    </div>
+</footer>
+
+ <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/scripts.js' %}"></script>
+   <link rel="stylesheet"  type="text/css" href="{% static 'accounts1/style.css' %}">
+   <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+</body>
+</html>
+
+

@@ -1,0 +1,42 @@
+from django.conf.urls import url
+from. import views
+from accounts1.views import  RegisterCustomer,CustomerBankAccount,RegisterCustomerTranscations,loan_calculator,currency_converter
+from  django.contrib.auth.views import login,logout
+urlpatterns =[
+    url(r'^$', views.home),
+    url(r'^login/$',login,{'template_name':'accounts1/login.html'}),
+    url(r'^logout/$',logout,{'template_name':'accounts1/logout.html'}),
+    url(r'^register/$', views.register, name='register'),
+    url(r'^RegisterCustomer/$',RegisterCustomer.as_view(), name='RegisterCustomer'),
+    url(r'^CustomerBankAccount/$',CustomerBankAccount.as_view(), name='CustomerBankAccount'),
+    url(r'^RegisterCustomerTranscations/$',RegisterCustomerTranscations.as_view(), name='RegisterCustomerTranscations'),
+    url(r'^loan_calculator/$',loan_calculator.as_view(),name='loan_calculator'),
+    url(r'^currency_converter/$',currency_converter.as_view(),name='currency_converter'),
+    url(r'^about_us/$', views.about_us, name='about_us'),
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^profile/$', views.view_profile, name='view_profile'),
+    url(r'^user_profile/$', views.user_profile, name='user_profile'),
+    url(r'^business_loans_and_leases/$', views.business_loans_and_leases, name='business_loans_and_leases'),
+    url(r'^consumer_loans/$', views.consumer_loans, name='consumer_loans'),
+    url(r'^special_loan_schemes/$', views.special_loan_schemes, name='special_loan_schemes'),
+    url(r'^agricultural_loans/$',views.agricultural_loans,name='agricultural_loans'),
+    url(r'^bank_over_draft/$',views.bank_over_draft,name='bank_over_draft'),
+    url(r'^trade_finance/$',views.trade_finance,name='trade_finance'),
+    url(r'^micro_business_loans/$',views.micro_business_loans,name='micro_business_loans'),
+    url(r'^solar_loans/$', views.solar_loans, name='solar_loans'),
+    url(r'^current_account/$', views.current_account, name='current_account'),
+    url(r'^savings_account/$', views.savings_account, name='savings_account'),
+    url(r'^home_improvement_loans/$', views.home_improvement_loans, name='home_improvement_loans'),
+    url(r'^cente_fixed_deposit_account/$', views.cente_fixed_deposit_account, name='cente_fixed_deposit_account'),
+    url(r'^ATM_services/$',views.ATM_services, name='ATM_services'),
+    url(r'^ATM_cardless_withdraw/$', views.ATM_cardless_withdraw, name='ATM_cardless_withdraw'),
+    url(r'^cente_point/$', views.cente_point, name='cente_point'),
+    url(r'^Ewater_payments/$', views.Ewater_payments, name='Ewater_payments'),
+    url(r'^airtel_money/$', views.airtel_money, name='airtel_money'),
+    url(r'^MTN_mobile_money_transfer/$', views.MTN_mobile_money_transfer, name='MTN_mobile_money_transfer'),
+    url(r'^western_union_money_transfer/$', views.western_union_money_transfer, name='western_union_money_transfer'),
+    url(r'^platinum_banking/$',views.platinum_banking,name='platinum_banking'),
+    url(r'^school_fees_payment_services/$', views.school_fees_payment_services, name='school_fees_payment_services'),
+    url(r'^standing_orders/$', views.standing_orders, name='standing_orders'),
+
+]
